@@ -13,18 +13,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
-    "ioredis": "^4.19.2",
-    "webpack": "^5.4.0",
     "body-parser": "^1.19.0",
+    "express": "^4.17.1",
     "html-webpack-plugin": "^4.5.0",
+    "ioredis": "^4.19.2",
     "path": "^0.12.7",
     "pg": "^8.4.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-loader-spinner": "^3.1.14",
     "url-loader": "^3.0.0",
-    "vm": "^0.1.0"
+    "vm": "^0.1.0",
+    "webpack": "^5.4.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.0",
