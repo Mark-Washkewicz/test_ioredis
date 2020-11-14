@@ -10,52 +10,52 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'build/')
     },
-    
+
     devServer: {
         publicPath: '/build/',
         proxy: [{
-           
-                context: '/api/leaders',
-                target:'http://localhost:3000/'
-            
-        }]
-      },
-    
-      
-    
-    module:{
 
-        rules:[
+            context: '/api/leaders',
+            target: 'http://localhost:3000/'
+
+        }]
+    },
+
+
+
+    module: {
+
+        rules: [
             {
-                test:/\.jsx?/,
+                test: /\.jsx?/,
                 exclude: /(node_modules)/,
-                
+
                 // query: {
                 //     presets: ['es2015']
                 // },
-                use:{
-                    loader:'babel-loader',
-                    options:{
-                        presets:['@babel/preset-env', '@babel/preset-react']
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-react']
                     }
                 }
             },
             {
                 test: /\.css$/,
                 use: [
-                  // Creates `style` nodes from JS strings
-                  'style-loader',
-                  // Translates CSS into CommonJS
-                  'css-loader',
-                  // Compiles Sass to CSS
-                //   'sass-loader',
+                    // Creates `style` nodes from JS strings
+                    'style-loader',
+                    // Translates CSS into CommonJS
+                    'css-loader',
+                    // Compiles Sass to CSS
+                    //   'sass-loader',
                 ],
             },
 
             {
                 test: /\.(jpg|jpeg|png)$/,
                 use: {
-                 loader: 'url-loader'
+                    loader: 'url-loader'
                 }
             },
 

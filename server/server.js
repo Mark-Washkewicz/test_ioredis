@@ -63,20 +63,52 @@ app.use('/numsub', (req, res) => {
     res.send('numsub')
 })
 
+// LOGIN PAGE ROUTES
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../index.html'));
 });
 
 
-app.post('/login', (req, res) => {
+app.get('/login', (req, res) => {
     //check the credenitals user and pw from req.body
+    let username = req.body.user;
+    let pw = req.body.pw;
     //if the user is an admin --> redirect to adminview?
+    if (username === 'codesmith' && pw === 'ilovetesting') {
+        res.redirect('/adminview')
+    }
     //if the user is a user --> redirect to userview?
+    else if (username === 'asdfasdf') {
+        res.redirect('/userview')
+    } else {
+        // res.send('wrong password')
+        res.redirect('/yo')
+    }
+
 });
 
-app.get('/userview', /**send userid? and sendFile userview? */)
+app.get('/userview', /**send userid? and sendFile userview? */(req, res) => {
+    //send file for userview
+})
 
-app.get('/adminview', /**send userid? and sendFile adminview? */)
+app.get('/adminview', /**send userid? and sendFile adminview? */(req, res) => {
+    //send file for adminview
+})
+
+// NEWSFEED ROUTES
+
+//getmysubs
+//getallchannels
+//
+/*
+sub
+unsub
+body: {userID, channel}
+*/
+// /newsfeed/getmysubs
+
+
+//PUBLISH ROUTES
 
 
 const PORT = 3000;
